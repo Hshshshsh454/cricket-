@@ -1,0 +1,6 @@
+{
+  "name": "cricket-app",
+  "main": "dist",
+  "compatibility_date": "2025-12-15",
+  "pages_build_output_dir": "./dist"
+}
