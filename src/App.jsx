@@ -13,6 +13,13 @@ import Registration from "./pages/Registration";
 // import PrivacyPolicyPage from "./pages/PrivacyPolicy";
 
 
+// ✅ Import Shop Page
+import Shop from "./components/Shop";
+import Tournaments from "./components/Tournaments";
+import VideoTrainingSection from "./components/VideoTrainingSection";
+import Page2 from "./components/Page2";
+import Details from "./components/Details"
+
 const App = () => {
   return (
     <Router>
@@ -23,14 +30,17 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/registration" element={<Registration />} />
-        {/* <Route path="/career" element={<Career />} /> */}
-        {/* <Route path="/blog" element={<Blog />} />
-        <Route path="/insights" element={<Insights101 />} />
-        <Route path="/why-softmaxs" element={<WhySoftmaxs />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-         */}
+        
       </Routes>
 
+     <>
+     <Details />
+     <Shop />
+     <Tournaments />
+     
+     <VideoTrainingSection />
+     <About />
+     </>
       <Footer />
     </Router>
   );

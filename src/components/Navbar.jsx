@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { theme } from "../styles/theme";
-
+import { Link, useNavigate } from "react-router-dom";
 // ==================== Animations ====================
 const slideDown = keyframes`
   from { opacity: 0; transform: translateY(-10px); }
@@ -203,8 +203,15 @@ const MenuButton = styled.div`
 
 // ==================== COMPONENT ====================
 
-export default function Navbar() {
+
+export default function Navbar({ }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavigation = (path) => {
+    navigate(path);
+    setMenuOpen(false);
+  };
 
   const aboutItems = [
     "The Anchor",
@@ -219,13 +226,14 @@ export default function Navbar() {
     "Training Center",
   ];
 
+  
   return (
     <NavbarWrapper>
       <TopBar>Breaking News</TopBar>
 
       <NavMain>
         {/* LEFT: Logo + Brand */}
-        <Left>
+        <Left as={Link} to="/" style={{ textDecoration: "none" }}>
           <Logo
             src="https://www.shutterstock.com/image-vector/cricket-player-logo-playing-short-600nw-2417878119.jpg"
             alt="CPP Logo"
@@ -245,7 +253,7 @@ export default function Navbar() {
 
         {/* NAV LINKS */}
         <NavLinks $open={menuOpen}>
-          <NavLink>Home</NavLink>
+           <NavLink onClick={() => handleNavigation("/")}>Home</NavLink>
 
           <NavLink>
             About CPP ▾
@@ -256,19 +264,21 @@ export default function Navbar() {
             </Dropdown>
           </NavLink>
 
-          <NavLink>Tournaments</NavLink>
-          <NavLink>Cricket Trial</NavLink>
-          <NavLink>Services</NavLink>
-          <NavLink>Gallery</NavLink>
-          <NavLink>Contact</NavLink>
+           <NavLink onClick={() => handleNavigation("/tournaments")}>Tournaments</NavLink>
+  <NavLink onClick={() => handleNavigation("/cricket-trial")}>Cricket Trial</NavLink>
+  <NavLink onClick={() => handleNavigation("/services")}>Services</NavLink>
+  <NavLink onClick={() => handleNavigation("/gallery")}>Gallery</NavLink>
+  <NavLink onClick={() => handleNavigation("/contact")}>Contact</NavLink>
         </NavLinks>
 
         {/* RIGHT: Registration Button */}
-        <ButtonGroup>
-<Button onClick={() => (window.location.href = "/registration")}>
-  Registration
-</Button>
-        </ButtonGroup>
+      {/* RIGHT: Registration Button */}
+<ButtonGroup>
+  <Button onClick={() => (window.location.href = "/registration")}>
+    Registration
+  </Button>
+</ButtonGroup>
+
       </NavMain>
     </NavbarWrapper>
   );

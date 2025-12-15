@@ -10,6 +10,11 @@ const Container = styled.div`
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   font-family: "Segoe UI", sans-serif;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    margin: 20px 10px;
+  }
 `;
 
 const Title = styled.h1`
@@ -17,6 +22,10 @@ const Title = styled.h1`
   font-size: 2.2rem;
   margin-bottom: 20px;
   color: #222;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
 `;
 
 const SectionTitle = styled.h2`
@@ -25,6 +34,10 @@ const SectionTitle = styled.h2`
   border-bottom: 2px solid #ccc;
   padding-bottom: 8px;
   color: #333;
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
 `;
 
 const FormGrid = styled.div`
@@ -32,6 +45,10 @@ const FormGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
   margin-top: 20px;
+
+  @media (max-width: 480px) {
+    gap: 15px;
+  }
 `;
 
 const Input = styled.input`
@@ -39,6 +56,11 @@ const Input = styled.input`
   border-radius: 6px;
   border: 1px solid #bbb;
   width: 100%;
+  font-size: 0.95rem;
+
+  @media (max-width: 480px) {
+    padding: 8px;
+  }
 `;
 
 const Select = styled.select`
@@ -46,17 +68,25 @@ const Select = styled.select`
   border-radius: 6px;
   border: 1px solid #bbb;
   width: 100%;
+  font-size: 0.95rem;
+  background: white;
+
+  @media (max-width: 480px) {
+    padding: 8px;
+  }
 `;
 
 const RadioGroup = styled.div`
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
 `;
 
 const Label = styled.label`
   font-weight: 500;
   color: #333;
+  font-size: 0.95rem;
 `;
 
 const TextArea = styled.textarea`
@@ -65,6 +95,11 @@ const TextArea = styled.textarea`
   border: 1px solid #bbb;
   width: 100%;
   resize: none;
+  font-size: 0.95rem;
+
+  @media (max-width: 480px) {
+    padding: 8px;
+  }
 `;
 
 const SubmitButton = styled.button`
@@ -81,6 +116,12 @@ const SubmitButton = styled.button`
   &:hover {
     background: #0056b3;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
 `;
 
 // ===== Benefits Section Styles =====
@@ -88,12 +129,21 @@ const BenefitsSection = styled.div`
   margin-top: 60px;
   padding-top: 30px;
   border-top: 2px solid #ddd;
+
+  @media (max-width: 768px) {
+    margin-top: 40px;
+    padding-top: 20px;
+  }
 `;
 
 const BenefitTitle = styled.h2`
   font-size: 1.8rem;
   color: #222;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
 `;
 
 const BenefitList = styled.ul`
@@ -101,6 +151,11 @@ const BenefitList = styled.ul`
   margin-left: 25px;
   line-height: 1.8;
   color: #444;
+
+  @media (max-width: 768px) {
+    margin-left: 15px;
+    line-height: 1.6;
+  }
 `;
 
 const Highlight = styled.span`
@@ -112,6 +167,7 @@ const CenterList = styled.p`
   font-weight: bold;
   color: #d60000;
   margin-top: 10px;
+  font-size: 0.95rem;
 `;
 
 // ===== Terms & Conditions Section Styles =====
@@ -119,12 +175,21 @@ const TermsSection = styled.div`
   margin-top: 60px;
   padding-top: 30px;
   border-top: 2px solid #ddd;
+
+  @media (max-width: 768px) {
+    margin-top: 40px;
+    padding-top: 20px;
+  }
 `;
 
 const TermsTitle = styled.h2`
   font-size: 1.8rem;
   color: #222;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
 `;
 
 const TermsList = styled.ul`
@@ -132,6 +197,11 @@ const TermsList = styled.ul`
   margin-left: 25px;
   line-height: 1.8;
   color: #444;
+
+  @media (max-width: 768px) {
+    margin-left: 15px;
+    line-height: 1.6;
+  }
 `;
 
 const Bold = styled.span`
@@ -422,7 +492,7 @@ const Registration = () => {
             FREE Trial By <Highlight>"CRICKET VIDEO"</Highlight> — If your cricket trial exceeds a pre-defined
             threshold, you stand a chance to avail free international quality training.{" "}
             <Highlight>
-              Note: Trail Fee Rs.800 (Members) / Rs.1500 (Direct). NON REFUNDABLE.
+              Note: Trial Fee Rs.800 (Members) / Rs.1500 (Direct). NON REFUNDABLE.
             </Highlight>
           </li>
         </BenefitList>
